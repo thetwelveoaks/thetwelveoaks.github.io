@@ -13,29 +13,15 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="css/carousel.css" />
-	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
-
-    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <!-- <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <!-- <script src="js/ie-emulation-modes-warning.js"></script> -->
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    
+    <link rel="stylesheet" href="css/carousel.css" />
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
   </head>
-<!-- NAVBAR
-================================================== -->
+<!-- NAVBAR ================================================== -->
   <body data-spy="scroll" data-target=".navbar" data-offset="50">
     <div class="navbar-wrapper">
       <div class="container-fluid">
@@ -166,10 +152,9 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Multidisciplinary Design Project.<span class="text-muted">It's all about teamwork.</span></h2>
+          <h2 class="featurette-heading">Multidisciplinary Design Project. <span class="text-muted">It's all about teamwork.</span></h2>
           <p class="lead">Design a robot with sensory apparatus to explore a randomly constructed maze and to traverse between two designated points in the least possible amount of time</p>
           <p><button id="mdp-btn" onclick="change_label(event)" type="button" class="btn btn-default" data-toggle="collapse" data-target="#mdp-collapse">Show me more &raquo;</button></p>
-		  <!-- <p><a class="btn btn-default" href="#mdp-collapse" role="button" data-toggle="collapse">Show me more &raquo;</a></p>		   -->
         </div>
         <div  class="col-md-5">
           <img class="featurette-image img-responsive center-block" src="img/MDP.gif" alt="MDP">
@@ -196,15 +181,15 @@
 								<p class="text-justify">
 									When the robot got stuck in the maze, it needed to backtrack. It's easy to implement backtracking in the simulator by just poping from the stack; 
 										however, it may not be wise to follow the <em>exact</em> resersed path when it comes to the physical robot, because as the maze gets
-										explored, a shorter backtracking path may exist. Therefore, we used <a href="https://en.wikipedia.org/wiki/A*_search_algorithm">A* search
+										explored, a shorter backtracking path may exist. Therefore, we used <a href="https://en.wikipedia.org/wiki/A*_search_algorithm" target="_blank">A* search
 										algorithm</a> to find a shortest backtracking path. 
 								</p>
 							</li>
 						</ul>
 					A picture is worth a thousand words, not to mention a video. If interested, please check out our project video 
-						<i class="fa fa-youtube-play fa-2" aria-hidden="true"></i><a href="https://www.youtube.com/watch?v=zCQrH_pqMwQ"> The Little Prince</a>, 
+						<i class="fa fa-youtube-play fa-2" aria-hidden="true"></i><a href="https://www.youtube.com/watch?v=zCQrH_pqMwQ" target="_blank"> The Little Prince</a>, 
 						of which I was the <strong>director</strong> and <strong>cinematographer</strong>. 
-						Also, our Git repository <i class="fa fa-github fa-2" aria-hidden="true"></i><a href="https://github.com/mohitgambani/MDP-Algo"> MDP-Algo</a>.
+						Also, our <i class="fa fa-github fa-2" aria-hidden="true"></i><a href="https://github.com/mohitgambani/MDP-Algo" target="_blank"> Git repository</a>.
 				</p>
 			</div>
 		</div>
@@ -214,8 +199,8 @@
 
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Deep Convolutional Neural Network.<span class="text-muted">How AlphaGo beat Mr.Lee Sedol</span></h2>
-          <p class="lead">Use deep convolutional neural networks and autoencoders to recognise hand-written digits</p>
+          <h2 class="featurette-heading">Deep Convolutional Neural Network. <span class="text-muted">How AlphaGo beat Mr. Lee Sedol</span></h2>
+          <p class="lead">Apply deep convolutional neural networks and autoencoders to recognise hand-written digits</p>
           <p><button id="cnn-btn" onclick="change_label(event)" type="button" class="btn btn-default" data-toggle="collapse" data-target="#cnn-collapse">Show me more &raquo;</button></p>
         </div>
         <div class="col-md-5 col-md-pull-7">
@@ -226,10 +211,26 @@
 	  <div class="row">
 	   <div class="col-md-12">
 			<div id="cnn-collapse" class="collapse">
-				<p>
-					Rome wasn't built in a day, and neither was our robot. It took four month's team effort and countless ups and downs...
-					I implemented an <em>intelligent</em> exploration algorithm based on <a href="https://en.wikipedia.org/wiki/Depth-first_search" target="_blank">Depth-first Search</a>
-						for our robot. Why is it said intelligent? 
+				<p class="text-justify">
+					This project is a mining of the <a href="http://yann.lecun.com/exdb/mnist/" target="_blank">MNIST</a> database which contains images of hand-written digits
+					in various shapes. We used 5,000 training images and 1,000 test images, eash of which has a 28x28 dimension. The experiment consists of two parts: 
+					<ul>
+						<li>
+							<p class="text-justify">
+								<strong>A deep convolutional neural network</strong>. We used two convolution layers of size 70 and 50, respectively, and two mean subsampling layers.
+									Our output layer is a softmax layer with 10 neurons. The accuracy was around 89%. 
+							</p>
+						</li>
+						<li>
+							<p class="text-justify">
+								<strong>A stacked autoencoder</strong>. In an <em>unsupervised</em> fashion, we first trained two autoencoders of size 120 and 60, respectively, 
+									to extract features from the images. Then we trained a softmax output layer using a supervised learning algorithm. The accuracy was around 
+									93%. 
+							</p>
+						</li>
+					</ul>
+					Our report can be found <a href="file/CNN_Autoencoder.pdf" target="_blank">here</a> as well as our 
+					<i class="fa fa-github fa-2" aria-hidden="true"></i><a href="https://github.com/thetwelveoaks/Deep-Learning-Project.git" target="_blank"> Git repository</a>.
 				</p>
 			</div>
 		</div>
@@ -239,15 +240,20 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
-        </div>
-        <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+			<h2 class="featurette-heading">First Android&trade; Project. <span class="text-muted">Naïve but memorable.</span></h2>
+			<p class="lead">
+				Develop an Android application to facilitate physician-patient communication by enabling patients to manage their appointments at ease
+			</p>
+			<p><button id="android-btn" onclick="change_label(event)" type="button" class="btn btn-default" data-toggle="collapse" data-target="#android-collapse">Show me more &raquo;</button></p>
+			<div id="android-collapse" class="collapse">
+				<p class="text-justify">
+				</p>
+			</div>
+		</div>
+		<div class="col-md-5">
+			<img class="featurette-image img-responsive center-block" src="img/android.png" alt="Android">
         </div>
       </div>
-	  
-	  
 
       <hr class="featurette-divider">
 
@@ -270,11 +276,10 @@
     <script>window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')</script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- <script src="js/bootstrap.min.js"></script> -->
-    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
-    <script src="js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
 	<script src="js/supplement.js"></script>
+	<!-- https://clustrmaps.com/site/17av7 -->
+	<script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=3k8860x2GBGczLo_JJjVB9tVvKQp0dEy_BVrau408LY&cl=ffffff&w=a"></script>
   </body>
 </html>
