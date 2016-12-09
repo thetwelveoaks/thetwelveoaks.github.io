@@ -12,7 +12,10 @@
     <title>Wei Yumou's Home</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/carousel.css" />
+	<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+
     <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
@@ -29,7 +32,7 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
+    
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -165,25 +168,72 @@
         <div class="col-md-7">
           <h2 class="featurette-heading">Multidisciplinary Design Project.<span class="text-muted">It's all about teamwork.</span></h2>
           <p class="lead">Design a robot with sensory apparatus to explore a randomly constructed maze and to traverse between two designated points in the least possible amount of time</p>
-          <p><a class="btn btn-default" href="#" role="button">Learn more &raquo;</a></p>
+          <p><button id="mdp-btn" onclick="change_label(event)" type="button" class="btn btn-default" data-toggle="collapse" data-target="#mdp-collapse">Show me more &raquo;</button></p>
+		  <!-- <p><a class="btn btn-default" href="#mdp-collapse" role="button" data-toggle="collapse">Show me more &raquo;</a></p>		   -->
         </div>
         <div  class="col-md-5">
           <img class="featurette-image img-responsive center-block" src="img/MDP.gif" alt="MDP">
         </div>
       </div>
-
+	  
+	  <div class="row">
+	   <div class="col-md-12">
+			<div id="mdp-collapse" class="collapse">
+				<p class="text-justify">
+					Rome wasn't built in a day, and neither was our robot. It took four months' team effort and countless ups and downs...I built a simulator using Java to experiment
+						different algorithms as you can see in the figure, and finally implemented an <em>intelligent</em> exploration 
+						algorithm based on <a href="https://en.wikipedia.org/wiki/Depth-first_search" target="_blank">Depth-first Search</a> for our robot. Why is it said intelligent?
+						Two aspects: 
+						<ul>
+							<li>
+								<p class="text-justify">
+									The hardware given to us was in fact highly unreliable, which accounted for the occasional breakdowns during exploration.
+										While a partial exploration might claim partial credits, a breakdown simply resulted in zero marks. As such, the robot was specified 
+										an <em>exploration level</em>: the percentage of the maze it should explore before it returned to the starting point prematurely. 
+								</p>
+							</li>
+							<li>
+								<p class="text-justify">
+									When the robot got stuck in the maze, it needed to backtrack. It's easy to implement backtracking in the simulator by just poping from the stack; 
+										however, it may not be wise to follow the <em>exact</em> resersed path when it comes to the physical robot, because as the maze gets
+										explored, a shorter backtracking path may exist. Therefore, we used <a href="https://en.wikipedia.org/wiki/A*_search_algorithm">A* search
+										algorithm</a> to find a shortest backtracking path. 
+								</p>
+							</li>
+						</ul>
+					A picture is worth a thousand words, not to mention a video. If interested, please check out our project video 
+						<i class="fa fa-youtube-play fa-2" aria-hidden="true"></i><a href="https://www.youtube.com/watch?v=zCQrH_pqMwQ"> The Little Prince</a>, 
+						of which I was the <strong>director</strong> and <strong>cinematographer</strong>. 
+						Also, our Git repository <i class="fa fa-github fa-2" aria-hidden="true"></i><a href="https://github.com/mohitgambani/MDP-Algo"> MDP-Algo</a>.
+				</p>
+			</div>
+		</div>
+	  </div>
+	  
       <hr class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
-          <h2 class="featurette-heading">Deep Convolutional Neural Network.<span class="text-muted">How AlphaGo beat Lee Sedol</span></h2>
-          <p class="lead">Use deep convolutional neural networks and autoencoders to recognise hand-written images</p>
-          <p><a class="btn btn-default" href="#" role="button">Learn more &raquo;</a></p>
+          <h2 class="featurette-heading">Deep Convolutional Neural Network.<span class="text-muted">How AlphaGo beat Mr.Lee Sedol</span></h2>
+          <p class="lead">Use deep convolutional neural networks and autoencoders to recognise hand-written digits</p>
+          <p><button id="cnn-btn" onclick="change_label(event)" type="button" class="btn btn-default" data-toggle="collapse" data-target="#cnn-collapse">Show me more &raquo;</button></p>
         </div>
         <div class="col-md-5 col-md-pull-7">
           <img class="featurette-image img-responsive center-block" src="img/digit.png" alt="hand-written digit">
         </div>
       </div>
+	  
+	  <div class="row">
+	   <div class="col-md-12">
+			<div id="cnn-collapse" class="collapse">
+				<p>
+					Rome wasn't built in a day, and neither was our robot. It took four month's team effort and countless ups and downs...
+					I implemented an <em>intelligent</em> exploration algorithm based on <a href="https://en.wikipedia.org/wiki/Depth-first_search" target="_blank">Depth-first Search</a>
+						for our robot. Why is it said intelligent? 
+				</p>
+			</div>
+		</div>
+	  </div>
 
       <hr class="featurette-divider">
 
@@ -196,6 +246,8 @@
           <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
         </div>
       </div>
+	  
+	  
 
       <hr class="featurette-divider">
 
@@ -223,5 +275,6 @@
     <script src="js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="js/ie10-viewport-bug-workaround.js"></script>
+	<script src="js/supplement.js"></script>
   </body>
 </html>
