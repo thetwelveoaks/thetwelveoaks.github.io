@@ -152,7 +152,7 @@
 
       <div class="row featurette">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Multidisciplinary Design Project. <span class="text-muted">It's all about teamwork.</span></h2>
+          <h2 class="featurette-heading">Multidisciplinary Design Project.<span class="text-muted"> Rome wasn't built in a day.</span></h2>
           <p class="lead">Design a robot with sensory apparatus to explore a randomly constructed maze and to traverse between two designated points in the least possible amount of time</p>
           <p><button id="mdp-btn" onclick="change_label(event)" type="button" class="btn btn-default" data-toggle="collapse" data-target="#mdp-collapse">Show me more &raquo;</button></p>
         </div>
@@ -161,41 +161,91 @@
         </div>
       </div>
 	  
-	  <div class="row">
-	   <div class="col-md-12">
-			<div id="mdp-collapse" class="collapse">
-				<p class="text-justify">
-					Rome wasn't built in a day, and neither was our robot. It took four months' team effort and countless ups and downs...I built a simulator using Java to experiment
-						different algorithms as you can see in the figure, and finally implemented an <em>intelligent</em> exploration 
-						algorithm based on <a href="https://en.wikipedia.org/wiki/Depth-first_search" target="_blank">Depth-first Search</a> for our robot. Why is it said intelligent?
-						Two aspects: 
-						<ul>
-							<li>
-								<p class="text-justify">
-									The hardware given to us was in fact highly unreliable, which accounted for the occasional breakdowns during exploration.
-										While a partial exploration might claim partial credits, a breakdown simply resulted in zero marks. As such, the robot was specified 
-										an <em>exploration level</em>: the percentage of the maze it should explore before it returned to the starting point prematurely. 
-								</p>
-							</li>
-							<li>
-								<p class="text-justify">
-									When the robot got stuck in the maze, it needed to backtrack. It's easy to implement backtracking in the simulator by just poping from the stack; 
-										however, it may not be wise to follow the <em>exact</em> resersed path when it comes to the physical robot, because as the maze gets
-										explored, a shorter backtracking path may exist. Therefore, we used <a href="https://en.wikipedia.org/wiki/A*_search_algorithm" target="_blank">A* search
-										algorithm</a> to find a shortest backtracking path. 
-								</p>
-							</li>
-						</ul>
-					A picture is worth a thousand words, not to mention a video. If interested, please check out our project video 
-						<i class="fa fa-youtube-play fa-2" aria-hidden="true"></i><a href="https://www.youtube.com/watch?v=zCQrH_pqMwQ" target="_blank"> The Little Prince</a>, 
-						of which I was the <strong>director</strong> and <strong>cinematographer</strong>. 
-						Also, our <i class="fa fa-github fa-2" aria-hidden="true"></i><a href="https://github.com/mohitgambani/MDP-Algo" target="_blank"> Git repository</a>.
-				</p>
+	  <div id="mdp-collapse" class="row collapse">
+		<div class="col-md-6 media">
+			<div class="media-left">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/zCQrH_pqMwQ" frameborder="0" allowfullscreen></iframe>
 			</div>
+			<p class="text-justify">
+				In case you're not familiar with <em>The Little Prince</em>, it's actually a French novella <a href="https://en.wikipedia.org/wiki/The_Little_Prince">
+					Le Petit Prince</a> written by Antoine de Saint-Exupéry. 
+			</p>
 		</div>
+		<div class="col-md-6">
+			<p class="text-justify">
+				Rome wasn't built in a day, and neither was our robot. It took four months' team effort and countless ups and downs...I built a simulator using Java to experiment
+					different algorithms as you can see in the figure, and finally implemented an <em>intelligent</em> exploration 
+					algorithm based on <a href="https://en.wikipedia.org/wiki/Depth-first_search" target="_blank">Depth-first Search</a> for our robot. Why is it said intelligent?
+					Two aspects: 
+					<ul>
+						<li>
+							<p class="text-justify">
+								The hardware given to us was in fact highly unreliable, which accounted for the occasional breakdowns during exploration.
+									While a partial exploration might claim partial credits, a breakdown simply resulted in zero marks. As such, the robot was specified 
+									an <em>exploration level</em>: the percentage of the maze it should explore before it returned to the starting point prematurely. 
+							</p>
+						</li>
+						<li>
+							<p class="text-justify">
+								When the robot got stuck in the maze, it needed to backtrack. It's easy to implement backtracking in the simulator by just poping from the stack; 
+									however, it may not be wise to follow the <em>exact</em> resersed path when it comes to the physical robot, because as the maze gets
+									explored, a shorter backtracking path may exist. Therefore, we used <a href="https://en.wikipedia.org/wiki/A*_search_algorithm" target="_blank">A* search
+									algorithm</a> to find a shortest backtracking path. 
+							</p>
+						</li>
+					</ul>
+				A picture is worth a thousand words, not to mention a video. Do check out our project video 
+					<!-- <i class="fa fa-youtube-play fa-2" aria-hidden="true"></i> <a href="https://www.youtube.com/watch?v=zCQrH_pqMwQ" target="_blank">The Little Prince</a>,  -->
+					of which I was the <strong>director</strong> and <strong>cinematographer</strong>. 
+					And our <i class="fa fa-github fa-2" aria-hidden="true"></i> <a href="https://github.com/mohitgambani/MDP-Algo" target="_blank">Git repository</a> as well.
+			</p>
+		</div>
+		
 	  </div>
 	  
       <hr class="featurette-divider">
+	  
+	  <div class="row featurette">
+        <div class="col-md-7">
+			<h2 class="featurette-heading">First Android&trade; Project. <span class="text-muted">Naïve but memorable.</span></h2>
+			<p class="lead">
+				Develop an Android application to allow patients to manage their appointments at ease
+			</p>
+			<p><button id="android-btn" onclick="change_label(event)" type="button" class="btn btn-default" data-toggle="collapse" data-target="#android-collapse">Show me more &raquo;</button></p>
+			<div id="android-collapse" class="collapse">
+				<p class="text-justify">
+					Patient Appointment Management System (<strong>PAMS</strong>) aims to create a hassle-free platform to foster better physician-patient communication. Its benefits are twofold: 
+					<ul>
+						<li>
+							<p class="text-justify">
+								<strong>Patients</strong> are automatically assigned available physicians. They can also receive notifications on updates and 
+									reschedule their appointments if needed. Given that some treatments are <em>partially ordered</em> (like some ultrasound tests go before urine tests), 
+									PAMS prevents patients from jumping ahead treatments. 
+							</p>
+						</li>
+						<li>
+							<p class="text-justify">
+								<strong>Physicians</strong> are able to view the medical records of a patient and schedule a <em>referal</em> appointment 
+									for a patient with another physician as the treatment procedure goes. 
+							</p>
+						</li>
+					</ul>
+					Check out our <i class="fa fa-github fa-5" aria-hidden="true"></i> <a href="https://github.com/thetwelveoaks/PAMS-Android-Frontend.git" target="_blank">PAMS-Android-Frontend</a>
+						 and <a href="https://github.com/thetwelveoaks/PAMS-Django-Backend.git" target="_blank">PAMS-Django-Backend</a>. Of course, video as well. 
+				</p>
+				<div class="media">
+					<div class="media-left">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/rWXnBWgNOzQ" frameborder="0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-5">
+			<img class="featurette-image img-responsive center-block" src="img/android.png" alt="Android">
+        </div>
+      </div>
+	  
+	  <hr class="featurette-divider">
 
       <div class="row featurette">
         <div class="col-md-7 col-md-push-5">
@@ -238,22 +288,7 @@
 
       <hr class="featurette-divider">
 
-      <div class="row featurette">
-        <div class="col-md-7">
-			<h2 class="featurette-heading">First Android&trade; Project. <span class="text-muted">Naïve but memorable.</span></h2>
-			<p class="lead">
-				Develop an Android application to facilitate physician-patient communication by enabling patients to manage their appointments at ease
-			</p>
-			<p><button id="android-btn" onclick="change_label(event)" type="button" class="btn btn-default" data-toggle="collapse" data-target="#android-collapse">Show me more &raquo;</button></p>
-			<div id="android-collapse" class="collapse">
-				<p class="text-justify">
-				</p>
-			</div>
-		</div>
-		<div class="col-md-5">
-			<img class="featurette-image img-responsive center-block" src="img/android.png" alt="Android">
-        </div>
-      </div>
+      
 
       <hr class="featurette-divider">
 
@@ -281,6 +316,6 @@
 	<script src="js/supplement.js"></script>
 	<!-- https://clustrmaps.com/site/17av7 -->
 	<!-- <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=3k8860x2GBGczLo_JJjVB9tVvKQp0dEy_BVrau408LY&cl=ffffff&w=a"></script> -->
-	<a style="display: none;" href="https://clustrmaps.com/site/17av7" title="Visit tracker"><img src="//clustrmaps.com/map_v2.png?cl=ffffff&w=300&d=3k8860x2GBGczLo_JJjVB9tVvKQp0dEy_BVrau408LY&t=n" /></a>
+	<!-- <a style="display: none;" href="https://clustrmaps.com/site/17av7" title="Visit tracker"><img src="//clustrmaps.com/map_v2.png?cl=ffffff&w=300&d=3k8860x2GBGczLo_JJjVB9tVvKQp0dEy_BVrau408LY&t=n" /></a> -->
   </body>
 </html>
