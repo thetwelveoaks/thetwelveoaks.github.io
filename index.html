@@ -173,30 +173,30 @@
 		</div>
 		<div class="col-md-6">
 			<p class="text-justify">
-				Rome wasn't built in a day, and neither was our robot. It took four months' team effort and countless ups and downs...I built a simulator using Java to experiment
-					different algorithms as you can see in the figure, and finally implemented an <em>intelligent</em> exploration 
-					algorithm based on <a href="https://en.wikipedia.org/wiki/Depth-first_search" target="_blank">Depth-first Search</a> for our robot. Why is it said intelligent?
-					Two aspects: 
-					<ul>
-						<li>
-							<p class="text-justify">
-								The hardware given to us was in fact highly unreliable, which accounted for the occasional breakdowns during exploration.
-									While a partial exploration might claim partial credits, a breakdown simply resulted in zero marks. As such, the robot was specified 
-									an <em>exploration level</em>: the percentage of the maze it should explore before it returned to the starting point prematurely. 
-							</p>
-						</li>
-						<li>
-							<p class="text-justify">
-								When the robot got stuck in the maze, it needed to backtrack. It's easy to implement backtracking in the simulator by just poping from the stack; 
-									however, it may not be wise to follow the <em>exact</em> resersed path when it comes to the physical robot, because as the maze gets
-									explored, a shorter backtracking path may exist. Therefore, we used <a href="https://en.wikipedia.org/wiki/A*_search_algorithm" target="_blank">A* search
-									algorithm</a> to find a shortest backtracking path. 
-							</p>
-						</li>
-					</ul>
+				<strong>My contributions to this project are mainly on the following two core functions. </strong>
+				<ul>
+					<li>
+						<p class="text-justify">
+							<strong>A robot controller</strong> to issue instructions. Our robot is like a toddler: it can walk around and sense the world but 
+								relies on the controller to tell it what to do. The controller is connected to the robot remotely via 
+								<a href="https://en.wikipedia.org/wiki/Transmission_Control_Protocol" target="_blank">Transmission Control Protocol</a>. 
+								Moreover, it provides a <em>robot simulator</em> (as shown above) that issues commands to a virtual robot, 
+								which allowed us to quickly test alternative algorithms before the physical robot was built. 
+						</p>
+					</li>
+					<li>
+						<p class="text-justify">
+							<strong>An intelligent exploration algorithm</strong> based on <a href="https://en.wikipedia.org/wiki/Depth-first_search" target="_blank">
+								Depth-first search</a>. When the robot gets stuck in the maze, it needs to backtrack. 
+								It's easier to implement backtracking in software by just poping from the stack which in hardware, however, means the robot has to physically
+								(<em>costly</em>) reverse along the previous path. As the maze gets explored, a shorter backtracking path may exist. 
+								Therefore, we used <a href="https://en.wikipedia.org/wiki/A*_search_algorithm" target="_blank">A* search
+								algorithm</a> to find such a path, which saved us tremendous time. 
+						</p>
+					</li>
+				</ul>
 				A picture is worth a thousand words, not to mention a video. Do check out our project video 
-					<!-- <i class="fa fa-youtube-play fa-2" aria-hidden="true"></i> <a href="https://www.youtube.com/watch?v=zCQrH_pqMwQ" target="_blank">The Little Prince</a>,  -->
-					of which I was the <strong>director</strong> and <strong>cinematographer</strong>. 
+					of which I was the <strong>director</strong> and <strong>cinematographer</strong>.<br>
 					And our <i class="fa fa-github fa-2" aria-hidden="true"></i> <a href="https://github.com/mohitgambani/MDP-Algo" target="_blank">Git repository</a> as well.
 			</p>
 		</div>
@@ -207,7 +207,7 @@
 	  
 	  <div class="row featurette">
         <div class="col-md-7">
-			<h2 class="featurette-heading">First Android&trade; Project. <span class="text-muted">Naïve but memorable.</span></h2>
+			<h2 class="featurette-heading">First Android&trade; Project.<span class="text-muted"> Naïve but practical.</span></h2>
 			<p class="lead">
 				Develop an Android application to allow patients to manage their appointments at ease
 			</p>
@@ -218,8 +218,8 @@
 					<ul>
 						<li>
 							<p class="text-justify">
-								<strong>Patients</strong> are automatically assigned available physicians. They can also receive notifications on updates and 
-									reschedule their appointments if needed. Given that some treatments are <em>partially ordered</em> (like some ultrasound tests go before urine tests), 
+								<strong>Patients</strong> are automatically assigned available physicians. They can reschedule and receive updates on 
+									their appointments. Given that some treatments are <em>partially ordered</em> (like some ultrasound tests go before urine tests), 
 									PAMS prevents patients from jumping ahead treatments. 
 							</p>
 						</li>
@@ -230,14 +230,13 @@
 							</p>
 						</li>
 					</ul>
+					I worked on the <strong>login</strong> and <strong>signup</strong> functions as well as wrote a module to standardise communications with our backend server. 
+					Messages are sent to the server via HTTP requests in json format. 
 					Check out our <i class="fa fa-github fa-5" aria-hidden="true"></i> <a href="https://github.com/thetwelveoaks/PAMS-Android-Frontend.git" target="_blank">PAMS-Android-Frontend</a>
-						 and <a href="https://github.com/thetwelveoaks/PAMS-Django-Backend.git" target="_blank">PAMS-Django-Backend</a>. Of course, video as well. 
+						 and <i class="fa fa-github fa-5" aria-hidden="true"></i> 
+						 <a href="https://github.com/thetwelveoaks/PAMS-Django-Backend.git" target="_blank">PAMS-Django-Backend</a>. 
+						 Of course, our <a href="https://www.youtube.com/embed/rWXnBWgNOzQ" target="_blank">video</a> as well. 
 				</p>
-				<div class="media">
-					<div class="media-left">
-						<iframe width="560" height="315" src="https://www.youtube.com/embed/rWXnBWgNOzQ" frameborder="0" allowfullscreen></iframe>
-					</div>
-				</div>
 			</div>
 		</div>
 		<div class="col-md-5">
@@ -263,24 +262,25 @@
 			<div id="cnn-collapse" class="collapse">
 				<p class="text-justify">
 					This project is a mining of the <a href="http://yann.lecun.com/exdb/mnist/" target="_blank">MNIST</a> database which contains images of hand-written digits
-					in various shapes. We used 5,000 training images and 1,000 test images, eash of which has a 28x28 dimension. The experiment consists of two parts: 
+					in various shapes and orientations. We used 5,000 training images and 1,000 test images, eash of which has a 28x28 dimension. 
+					The experiment consists of two parts: 
 					<ul>
 						<li>
 							<p class="text-justify">
-								<strong>A deep convolutional neural network</strong>. We used two convolution layers of size 70 and 50, respectively, and two mean subsampling layers.
-									Our output layer is a softmax layer with 10 neurons. The accuracy was around 89%. 
+								<strong>A deep convolutional neural network</strong>. We used two convolution layers of size 70 and 50, respectively, two mean subsampling layers, 
+									one fully connected layer and one softmax layer with 10 neurons as the output layer. The test accuracy was around 89%. 
 							</p>
 						</li>
 						<li>
 							<p class="text-justify">
 								<strong>A stacked autoencoder</strong>. In an <em>unsupervised</em> fashion, we first trained two autoencoders of size 120 and 60, respectively, 
-									to extract features from the images. Then we trained a softmax output layer using a supervised learning algorithm. The accuracy was around 
+									to extract features from the images. Then we trained a softmax output layer using a supervised learning algorithm. The test accuracy was around 
 									93%. 
 							</p>
 						</li>
 					</ul>
-					Our report can be found <a href="file/CNN_Autoencoder.pdf" target="_blank">here</a> as well as our 
-					<i class="fa fa-github fa-2" aria-hidden="true"></i><a href="https://github.com/thetwelveoaks/Deep-Learning-Project.git" target="_blank"> Git repository</a>.
+					Do check out our <a href="file/CNN_Autoencoder.pdf" target="_blank">report</a> as well as our 
+					<i class="fa fa-github fa-2" aria-hidden="true"></i> <a href="https://github.com/thetwelveoaks/Deep-Learning-Project.git" target="_blank">Git repository</a>.
 				</p>
 			</div>
 		</div>
@@ -315,7 +315,7 @@
     <script src="js/ie10-viewport-bug-workaround.js"></script>
 	<script src="js/supplement.js"></script>
 	<!-- https://clustrmaps.com/site/17av7 -->
-	<!-- <script type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=3k8860x2GBGczLo_JJjVB9tVvKQp0dEy_BVrau408LY&cl=ffffff&w=a"></script> -->
+	<script style="display:none;" type="text/javascript" id="clustrmaps" src="//cdn.clustrmaps.com/map_v2.js?d=3k8860x2GBGczLo_JJjVB9tVvKQp0dEy_BVrau408LY&cl=ffffff&w=a"></script>
 	<!-- <a style="display: none;" href="https://clustrmaps.com/site/17av7" title="Visit tracker"><img src="//clustrmaps.com/map_v2.png?cl=ffffff&w=300&d=3k8860x2GBGczLo_JJjVB9tVvKQp0dEy_BVrau408LY&t=n" /></a> -->
   </body>
 </html>
